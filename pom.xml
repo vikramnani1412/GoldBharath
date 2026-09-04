@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Goldbharath_Xyug</groupId>
+  <artifactId>Goldbharath_Automation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>helloworldabc Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- Compiler Version updated to Java 17 (current LTS) -->
+  <properties>
+	  <maven.compiler.source>17</maven.compiler.source>
+	  <maven.compiler.target>17</maven.compiler.target>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <!-- NOTE: mysql:mysql-connector-java has been renamed/relocated to com.mysql:mysql-connector-j -->
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>9.7.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.5.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>6.3.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.12.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.1.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.22.0</version>
+    </dependency>
+
+    <!-- This is the external compiler used to compile the project -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.46</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- javafaker removed: it is deprecated/unmaintained and its transitive
+         snakeyaml dependency has known CVEs. datafaker (below) is its
+         actively maintained successor and covers the same use cases. -->
+
+    <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
+    <dependency>
+        <groupId>net.datafaker</groupId>
+        <artifactId>datafaker</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.45.0</version>
+    </dependency>
+
+    <!-- Swapped slf4j-simple for Log4j2: slf4j-simple only prints to console,
+         Log4j2 gives you rolling file logs (log4j2.xml) which are far more
+         useful for debugging failed CI/Jenkins runs after the fact. -->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.26.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j2-impl</artifactId>
+        <version>2.26.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <!-- Utility methods (StringUtils, RandomStringUtils, DateUtils, etc.) that
+         come up constantly in a POM framework's helper/util classes. -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.20.0</version>
+    </dependency>
+    
+    <dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>s3</artifactId>
+    <version>2.43.0</version>
+    </dependency>
+    
+
+  </dependencies>
+
+
+  <build>
+    <plugins>
+
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.5.6</version>
+
+    <configuration>
+
+        <!-- TestNG Suites -->
+        <suiteXmlFiles>
+
+            <suiteXmlFile>Total_OPHC_Flow_Test.xml</suiteXmlFile>
+
+        </suiteXmlFiles>
+
+        <!-- JVM arguments -->
+        <argLine>-Dfile.encoding=UTF-8</argLine>
+
+        <!-- Print execution summary -->
+        <printSummary>true</printSummary>
+
+        <!-- Reuse JVM -->
+        <reuseForks>true</reuseForks>
+
+        <!-- One JVM -->
+        <forkCount>1</forkCount>
+
+    </configuration>
+</plugin>
+
+        <!-- Added: maven-compiler-plugin pinned to a current version,
+             consistent with the Java 17 source/target set above -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.15.0</version>
+            <configuration>
+                <source>${maven.compiler.source}</source>
+                <target>${maven.compiler.target}</target>
+            </configuration>
+        </plugin>
+
+    </plugins>
+  </build>
+  
+</project>
