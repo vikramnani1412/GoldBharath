@@ -26,8 +26,8 @@ public class UserBaseClass extends CommonBaseClass {
     @BeforeClass(alwaysRun = true)
     public void launchBrowser() throws IOException {
 
-        String browser = pUtil.readDataFromPropertyFile("browser");
-        String url = pUtil.readDataFromPropertyFile("doctorUrl");
+        String browser = pUtil.readDataFromPropertyFile("browser1");
+        String url = pUtil.readDataFromPropertyFile("userUrl");
 
         // Used by Extent Report
         System.setProperty("browser", browser);

@@ -5,11 +5,7 @@
     <classes>
       <class name="Sprint1.Check">
         <methods>
-          <include name="logoutFromAdminApp"/>
           <include name="loginTest"/>
-          <include name="launchBrowser"/>
-          <include name="loginToAdminApp"/>
-          <include name="closeBrowser"/>
         </methods>
       </class> <!-- Sprint1.Check -->
     </classes>

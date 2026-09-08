@@ -22,7 +22,8 @@ public class AdminBaseClass extends CommonBaseClass {
     protected WebDriverUtility wUtil = new WebDriverUtility();
     protected JavaUtility jUtil = new JavaUtility();
     protected ExcelFileUtility eUtil = new ExcelFileUtility();
-
+    
+    
     @BeforeClass(alwaysRun = true)
     public void launchBrowser() throws IOException {
 
@@ -68,8 +69,8 @@ public class AdminBaseClass extends CommonBaseClass {
     @BeforeMethod
     public void loginToAdminApp() throws Throwable
     {
-    	String username = pUtil.readDataFromPropertyFile("adminusername");
-        String password = pUtil.readDataFromPropertyFile("adminpassword");
+    	String username = pUtil.readDataFromPropertyFile("adminUsername");
+        String password = pUtil.readDataFromPropertyFile("adminPassword");
 
 //        AdminLoginPage loginPage = new AdminLoginPage(driver);
 //
