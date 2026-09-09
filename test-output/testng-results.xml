@@ -2,15 +2,22 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-09-08T12:41:07 IST" name="Default suite" finished-at="2026-09-08T12:41:30 IST" duration-ms="23345">
+  <suite started-at="2026-09-09T11:49:49 IST" name="Default suite" finished-at="2026-09-09T11:50:33 IST" duration-ms="44667">
     <groups>
     </groups>
-    <test started-at="2026-09-08T12:41:07 IST" name="Default test" finished-at="2026-09-08T12:41:30 IST" duration-ms="23345">
+    <test started-at="2026-09-09T11:49:49 IST" name="Default test" finished-at="2026-09-09T11:50:33 IST" duration-ms="44667">
       <class name="Sprint1.Check">
-        <test-method signature="loginTest()[pri:0, instance:Sprint1.Check@5b367418]" started-at="2026-09-08T12:41:07 IST" name="loginTest" finished-at="2026-09-08T12:41:30 IST" duration-ms="23274" status="PASS">
+        <test-method signature="RegisteringToGoldbharathTest(java.util.List)[pri:1, instance:Sprint1.Check@19c65cdc]" started-at="2026-09-09T11:49:50 IST" name="RegisteringToGoldbharathTest" data-provider="mobileNumbers" finished-at="2026-09-09T11:50:33 IST" duration-ms="43677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[9999999999, 9999999998, 9999999988, 9999999888, 9999998888, 9999988888, 9999888888, 9998888888, 9988888888, 9888888888, 9777777777, 9666666666, 9555555555, 9444444444, 9333333333, 9222222222, 9111111111, 9888889999, 9777778888, 9666669999]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
+        </test-method> <!-- RegisteringToGoldbharathTest -->
       </class> <!-- Sprint1.Check -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -5,7 +5,7 @@
     <classes>
       <class name="Sprint1.Check">
         <methods>
-          <include name="loginTest"/>
+          <include name="RegisteringToGoldbharathTest"/>
         </methods>
       </class> <!-- Sprint1.Check -->
     </classes>
