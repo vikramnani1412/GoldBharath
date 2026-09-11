@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint1.Check">
+      <class name="Sprint1.LiginToGoldBharath">
         <methods>
-          <include name="RegisteringToGoldbharathTest"/>
+          <include name="login"/>
+          <include name="logoutFromDoctorApp"/>
+          <include name="loginToDoctorApp"/>
+          <include name="launchBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- Sprint1.Check -->
+      </class> <!-- Sprint1.LiginToGoldBharath -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

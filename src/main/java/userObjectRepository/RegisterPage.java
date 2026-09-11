@@ -1,4 +1,4 @@
-package adminObjectRepository;
+package userObjectRepository;
 
 import java.util.List;
 

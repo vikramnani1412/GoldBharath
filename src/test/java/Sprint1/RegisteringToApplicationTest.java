@@ -2,29 +2,28 @@ package Sprint1;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import adminObjectRepository.RegisterPage;
 import genericUtilities.ExcelFileUtility;
 import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import userObjectRepository.LoginPage;
+import userObjectRepository.RegisterPage;
 
-public class Check {
+public class RegisteringToApplicationTest {
 
     WebDriverUtility wUtil = new WebDriverUtility();
     PropertyFileUtility pUtil = new PropertyFileUtility();
     JavaUtility jUtil = new JavaUtility();
     ExcelFileUtility eUtil = new ExcelFileUtility();
 
-
+    
     // ============================================================
     // DATA PROVIDER - READ MULTIPLE MOBILE NUMBERS FROM EXCEL
     // ============================================================
@@ -71,13 +70,6 @@ public class Check {
     public void RegisteringToGoldbharathTest(List<String> mobileNumbers) throws Throwable {
 
         // --------------------------------------------------------
-        // Read URL
-        // --------------------------------------------------------
-
-        String URL = pUtil.readDataFromPropertyFile("userUrl");
-
-
-        // --------------------------------------------------------
         // Read Registration Details
         // --------------------------------------------------------
 
@@ -99,7 +91,12 @@ public class Check {
         String Address =
                 eUtil.readDataFromExcel("Sheet1", 7, 1);
 
-
+        // --------------------------------------------------------
+        // Read URL
+        // --------------------------------------------------------
+        String URL = pUtil.readDataFromPropertyFile("userUrl");
+        
+        
         // --------------------------------------------------------
         // Chrome Configuration
         // --------------------------------------------------------
@@ -190,6 +187,14 @@ public class Check {
                     "=============================================="
             );
 
+            Thread.sleep(2000);
+            
+            LoginPage lPage = new LoginPage(driver);
+            lPage.LoginToApplication(driver, uniqueMobileNumber);
+            
+            Thread.sleep(2000);
+            
+            
 
         } finally {
 
@@ -201,5 +206,52 @@ public class Check {
                 driver.quit();
             }
         }
+        
     }
+        
+    @Test
+    public void loginUpdatingKYC() throws Exception
+    {
+        // --------------------------------------------------------
+        // Read URL
+        // --------------------------------------------------------
+        String URL = pUtil.readDataFromPropertyFile("userUrl");
+    	
+    	WebDriverManager.chromedriver().setup();
+
+        ChromeOptions options = new ChromeOptions();
+
+        // options.addArguments("--headless=new");
+
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-infobars");
+
+
+        // --------------------------------------------------------
+        // Launch Browser
+        // --------------------------------------------------------
+
+        WebDriver driver = new ChromeDriver(options);
+
+        try {
+
+            driver.manage().window().maximize();
+            driver.get(URL);
+            Thread.sleep(2000);
+            
+            
+            
+            
+            
+        }
+        catch (Exception e) {
+			
+		}
+    }
+        
+    
+    
 }

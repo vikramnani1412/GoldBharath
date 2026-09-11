@@ -14,6 +14,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import userObjectRepository.LoginPage;
+import userObjectRepository.LogoutPage;
+
 public class UserBaseClass extends CommonBaseClass {
 
     protected WebDriver driver;
@@ -69,14 +72,11 @@ public class UserBaseClass extends CommonBaseClass {
     @BeforeMethod
     public void loginToDoctorApp() throws Throwable
     {
-        String MOBILE_NUMBER = pUtil.readDataFromPropertyFile("dmobilenumber");
+        String MOBILE_NUMBER = pUtil.readDataFromPropertyFile("userMobilenumber");
     	
-//        LoginPage lPage = new LoginPage(driver);
-//        lPage.loginToDoctor(MOBILE_NUMBER);
-//
-//        VerifyCodePage vcPage = new VerifyCodePage(driver);
-//        vcPage.enteringOtpAndClickOnVerifyBtn(driver);
-        System.out.println("Doctor Login Successful");
+        LoginPage lPage = new LoginPage(driver);
+        lPage.LoginToApplication(driver, MOBILE_NUMBER);
+
     }
     
     @AfterMethod
@@ -84,8 +84,8 @@ public class UserBaseClass extends CommonBaseClass {
     {
     	try {
 
-//            WelcomePage wPage = new WelcomePage(driver);
-//            wPage.logoutOfApp(driver);
+            LogoutPage lPage = new LogoutPage(driver);
+            lPage.logoutOfApplication(driver);
 
             System.out.println("Doctor Logout Successful");
 
