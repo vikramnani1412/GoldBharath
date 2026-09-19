@@ -1,5 +1,6 @@
 package adminObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -122,6 +123,20 @@ public class ManageDistributorPage {
 
 	// Business Library
 
+	public void clickOnRecentlyRegisteredAndKycCompletedDistributor(WebDriver driver, String MobileNumber, String OwnerName) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//td[.='"+MobileNumber+"']/preceding-sibling::td//b")).click();
+	}
+	
+	public void clickOnRecentlyRegisteredDistributorEditButton(WebDriver driver, String MobileNumber) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//td[.='"+MobileNumber+"']/following-sibling::td/button[@routerlink='/Edit-Manage-Distributor']")).click();
+	}
+	
+	//td[.='9444444444']/following-sibling::td/button[@routerlink='/Edit-Manage-Distributor']
+	
 	public void checkToodleIsSelected()
 	{
 		WebElement toggle =  ToggleBtnBasedOnMobileNumber;

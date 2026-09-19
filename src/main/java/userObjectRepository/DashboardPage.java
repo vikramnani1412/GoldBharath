@@ -1,9 +1,17 @@
 package userObjectRepository;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import genericUtilities.WebDriverUtility;
 
 public class DashboardPage {
 
@@ -208,11 +216,22 @@ public class DashboardPage {
 	
 	// Business Library
 	
-	public void clickOnUserProfileImageAndLogoutLink() throws Exception
-	{
-		Thread.sleep(2000);
-		UserProfileImg.click();
-		Thread.sleep(2000);
-		LogoutLnk.click();
+	public void clickOnUserProfileImageAndLogoutLink(WebDriver driver) throws Exception {
+
+		WebDriverUtility wUtil = new WebDriverUtility();
+		
+	    By successToast = By.xpath("//p[contains(.,'Login Successfully')]");
+	    Thread.sleep(2000);
+	    try {
+	    	wUtil.waitForElementToBeClickable(driver, UserProfileImg);
+	    } catch (TimeoutException e) {
+	        System.out.println(successToast+" Success toast is still present. Continuing...");
+	    }
+
+	    wUtil.waitForElementToBeClickable(driver, UserProfileImg);
+	    Thread.sleep(2000);
+	    UserProfileImg.click();
+	    
+	    
 	}
 }

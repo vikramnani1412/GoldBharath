@@ -14,8 +14,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import userObjectRepository.DashboardPage;
 import userObjectRepository.LoginPage;
 import userObjectRepository.LogoutPage;
+import userObjectRepository.UserProfilePage;
 
 public class UserBaseClass extends CommonBaseClass {
 
@@ -80,17 +82,20 @@ public class UserBaseClass extends CommonBaseClass {
     }
     
     @AfterMethod
-    public void logoutFromDoctorApp()
-    {
+    public void logoutFromDoctorApp() throws Exception
+    {    	
     	try {
-
+    		Thread.sleep(3000);
+    		DashboardPage dbPage = new DashboardPage(driver);
+    		dbPage.clickOnUserProfileImageAndLogoutLink(driver);
+    		Thread.sleep(2000);
+    		UserProfilePage upPage = new UserProfilePage(driver);
+    		upPage.clickOnLogoutLink();
+    		Thread.sleep(2000);
             LogoutPage lPage = new LogoutPage(driver);
             lPage.logoutOfApplication(driver);
-
             System.out.println("Doctor Logout Successful");
-
         } catch (Exception e) {
-
             System.out.println(
                     "Logout skipped because user is already logged out or page not available");
         }

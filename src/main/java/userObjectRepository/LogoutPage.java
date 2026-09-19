@@ -38,8 +38,8 @@ public class LogoutPage {
 	
 	public void logoutOfApplication(WebDriver driver) throws Exception
 	{
-		DashboardPage dbPage = new DashboardPage(driver);
-		dbPage.clickOnUserProfileImageAndLogoutLink();
+//		DashboardPage dbPage = new DashboardPage(driver);
+//		dbPage.clickOnUserProfileImageAndLogoutLink();
 		Thread.sleep(2000);
 		OkBtn.click();
 	}

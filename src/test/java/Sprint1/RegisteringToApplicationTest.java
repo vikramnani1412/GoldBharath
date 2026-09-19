@@ -13,8 +13,11 @@ import genericUtilities.JavaUtility;
 import genericUtilities.PropertyFileUtility;
 import genericUtilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import userObjectRepository.DashboardPage;
+import userObjectRepository.KycAsProprietorPage;
 import userObjectRepository.LoginPage;
 import userObjectRepository.RegisterPage;
+import userObjectRepository.WelcomePage;
 
 public class RegisteringToApplicationTest {
 
@@ -209,9 +212,20 @@ public class RegisteringToApplicationTest {
         
     }
         
-    @Test
+    @Test(priority = 2)
     public void loginUpdatingKYC() throws Exception
     {
+    	// Proprietor
+		
+    	String PropreitorName = eUtil.readDataFromExcel("Sheet1", 34, 2);
+		String PropreitorPan = eUtil.readDataFromExcel("Sheet1", 35, 2);
+		String GstNumber = eUtil.readDataFromExcel("Sheet1", 36, 2);
+		String BankName = eUtil.readDataFromExcel("Sheet1", 37, 2);
+		String AccountNumber = eUtil.readDataFromExcel("Sheet1", 38, 2);
+		String IFSCCode = eUtil.readDataFromExcel("Sheet1", 39, 2);
+		String AccountHolderName = eUtil.readDataFromExcel("Sheet1", 34, 2);
+    			
+    	
         // --------------------------------------------------------
         // Read URL
         // --------------------------------------------------------
@@ -242,13 +256,29 @@ public class RegisteringToApplicationTest {
             driver.get(URL);
             Thread.sleep(2000);
             
-            
-            
-            
+    		WelcomePage wPage = new WelcomePage(driver);
+    		wPage.clickOnLoginLink();
+    		Thread.sleep(2000);
+    		
+    		LoginPage lpage = new LoginPage(driver);
+    		lpage.LoginToApplication(driver, "9999999999");
+    		Thread.sleep(2000);
+    		
+    		DashboardPage dbPage = new DashboardPage(driver);
+    		dbPage.clickOnUserProfileImageAndLogoutLink(driver);
+    		Thread.sleep(2000);
+    		
+    		driver.findElement(By.xpath("//div[.='KYC']")).click();
+    		Thread.sleep(2000);
+    		KycAsProprietorPage kPage = new KycAsProprietorPage(driver);
+    		kPage.proprietorKyc(driver, PropreitorName, PropreitorPan, GstNumber, BankName, AccountNumber, IFSCCode, AccountHolderName);
             
         }
-        catch (Exception e) {
-			
+        catch (Exception e) 
+        {
+        	if (driver != null) {
+                driver.quit();
+            }
 		}
     }
         

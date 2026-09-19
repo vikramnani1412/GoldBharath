@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import userObjectRepository.LoginPage;
 import userObjectRepository.WelcomePage;
 
-public class LiginToGoldBharath {
+public class LoginToGoldBharath {
 
 	@Test
 	public void login() throws Exception

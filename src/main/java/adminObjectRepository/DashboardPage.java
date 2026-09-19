@@ -1,5 +1,6 @@
 package adminObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -156,8 +157,14 @@ public class DashboardPage {
 	}
     
 	
-	
-	
 	//Business Libraries
 	
+	public void checkingRecentlyRegisteredAndKycCompletedDistributor(WebDriver driver, String MobileNumber, String OwnerName) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		AllDistributorLnk.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//td[.='"+MobileNumber+"']/preceding-sibling::td//b[.='"+OwnerName+"']")).click();
+		//td[.='9999998888']/preceding-sibling::td//b[.='asdfghj']
+	}
 }
