@@ -216,6 +216,25 @@ public class DashboardPage {
 	
 	// Business Library
 	
+	public void clickOnBookGoldBtn(WebDriver driver) throws Exception
+	{
+		WebDriverUtility wUtil = new WebDriverUtility();
+		
+		wUtil.scrollExactToParticularWebElement(driver, BookGoldBtn);
+		Thread.sleep(2000);
+		BookGoldBtn.click();
+	}
+	
+	public void clickOnBuyGoldBtn(WebDriver driver) throws Exception
+	{
+		WebDriverUtility wUtil = new WebDriverUtility();
+		
+		wUtil.scrollExactToParticularWebElement(driver, BookGoldBtn);
+		Thread.sleep(2000);
+		BuyGoldBtn.click();
+	}
+	
+	
 	public void clickOnUserProfileImageAndLogoutLink(WebDriver driver) throws Exception {
 
 		WebDriverUtility wUtil = new WebDriverUtility();

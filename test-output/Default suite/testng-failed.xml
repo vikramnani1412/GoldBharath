@@ -6,8 +6,10 @@
       <class name="Sprint1.GoldBharathFullWorkFlow">
         <methods>
           <include name="loginUpdatingKYC"/>
+          <include name="distributorBuyingGoldTest"/>
           <include name="loginToAdminApproveKycAndGivingGoldAndSilverLimit"/>
           <include name="RegisteringToGoldbharathTest"/>
+          <include name="distributorBookingGoldTest"/>
         </methods>
       </class> <!-- Sprint1.GoldBharathFullWorkFlow -->
     </classes>

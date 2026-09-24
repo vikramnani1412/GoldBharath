@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-09-19T17:17:29 IST" name="Default suite" finished-at="2026-09-19T17:22:11 IST" duration-ms="281689">
+  <suite started-at="2026-09-24T18:15:15 IST" name="Default suite" finished-at="2026-09-24T18:21:04 IST" duration-ms="349591">
     <groups>
     </groups>
-    <test started-at="2026-09-19T17:17:29 IST" name="Default test" finished-at="2026-09-19T17:22:11 IST" duration-ms="281689">
+    <test started-at="2026-09-24T18:15:15 IST" name="Default test" finished-at="2026-09-24T18:21:04 IST" duration-ms="349591">
       <class name="Sprint1.GoldBharathFullWorkFlow">
-        <test-method signature="RegisteringToGoldbharathTest(java.util.List)[pri:1, instance:Sprint1.GoldBharathFullWorkFlow@327bcebd]" started-at="2026-09-19T17:17:30 IST" name="RegisteringToGoldbharathTest" data-provider="mobileNumbers" finished-at="2026-09-19T17:19:01 IST" duration-ms="90882" status="PASS">
+        <test-method signature="RegisteringToGoldbharathTest(java.util.List)[pri:1, instance:Sprint1.GoldBharathFullWorkFlow@74bf1791]" started-at="2026-09-24T18:15:16 IST" name="RegisteringToGoldbharathTest" data-provider="mobileNumbers" finished-at="2026-09-24T18:16:23 IST" duration-ms="67221" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,14 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegisteringToGoldbharathTest -->
-        <test-method signature="loginUpdatingKYC()[pri:2, instance:Sprint1.GoldBharathFullWorkFlow@327bcebd]" started-at="2026-09-19T17:19:01 IST" name="loginUpdatingKYC" finished-at="2026-09-19T17:20:00 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.RegisteringToGoldbharathTest" duration-ms="58590" status="PASS">
+        <test-method signature="loginUpdatingKYC()[pri:2, instance:Sprint1.GoldBharathFullWorkFlow@74bf1791]" started-at="2026-09-24T18:16:23 IST" name="loginUpdatingKYC" finished-at="2026-09-24T18:17:12 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.RegisteringToGoldbharathTest" duration-ms="49203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginUpdatingKYC -->
-        <test-method signature="loginToAdminApproveKycAndGivingGoldAndSilverLimit()[pri:3, instance:Sprint1.GoldBharathFullWorkFlow@327bcebd]" started-at="2026-09-19T17:20:00 IST" name="loginToAdminApproveKycAndGivingGoldAndSilverLimit" finished-at="2026-09-19T17:22:11 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.loginUpdatingKYC" duration-ms="131267" status="PASS">
+        <test-method signature="loginToAdminApproveKycAndGivingGoldAndSilverLimit()[pri:3, instance:Sprint1.GoldBharathFullWorkFlow@74bf1791]" started-at="2026-09-24T18:17:12 IST" name="loginToAdminApproveKycAndGivingGoldAndSilverLimit" finished-at="2026-09-24T18:19:21 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.loginUpdatingKYC" duration-ms="128459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToAdminApproveKycAndGivingGoldAndSilverLimit -->
+        <test-method signature="distributorBookingGoldTest()[pri:4, instance:Sprint1.GoldBharathFullWorkFlow@74bf1791]" started-at="2026-09-24T18:19:21 IST" name="distributorBookingGoldTest" finished-at="2026-09-24T18:19:48 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.loginToAdminApproveKycAndGivingGoldAndSilverLimit" duration-ms="27659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- distributorBookingGoldTest -->
+        <test-method signature="distributorBuyingGoldTest()[pri:5, instance:Sprint1.GoldBharathFullWorkFlow@74bf1791]" started-at="2026-09-24T18:19:48 IST" name="distributorBuyingGoldTest" finished-at="2026-09-24T18:21:04 IST" depends-on-methods="Sprint1.GoldBharathFullWorkFlow.distributorBookingGoldTest" duration-ms="76052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- distributorBuyingGoldTest -->
       </class> <!-- Sprint1.GoldBharathFullWorkFlow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

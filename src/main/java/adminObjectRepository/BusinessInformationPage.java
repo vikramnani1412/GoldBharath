@@ -204,12 +204,10 @@ public class BusinessInformationPage {
 	
 	public void editingAndGivingSilverAndGoldLimit(String SilverLimit, String GoldLimit) throws Exception
 	{
-	    BusinessNameEdt.sendKeys(Keys.CONTROL, "a");
-	    Thread.sleep(2000);
-	    BusinessNameEdt.sendKeys(Keys.CONTROL, "x");
-	    Thread.sleep(2000);
-	    BusinessNameEdt.sendKeys(Keys.CONTROL, "v");
-	    Thread.sleep(2000);
+//	    BusinessNameEdt.clear();
+//	    Thread.sleep(2000);
+//	    BusinessNameEdt.sendKeys("Ai Solutions");
+//	    Thread.sleep(2000);
 
 	    AccountHolderNameEdt.sendKeys(Keys.CONTROL, "a");
 	    Thread.sleep(2000);
@@ -325,9 +323,13 @@ public class BusinessInformationPage {
 
 	    // Silver Limit
 	    Thread.sleep(2000);
+	    SilverMaxLimitEdt.clear();
+	    Thread.sleep(2000);
 	    SilverMaxLimitEdt.sendKeys(SilverLimit);
 
 	    // Gold Limit
+	    Thread.sleep(2000);
+	    GoldMaxLimitEdt.clear();
 	    Thread.sleep(2000);
 	    GoldMaxLimitEdt.sendKeys(GoldLimit);
 

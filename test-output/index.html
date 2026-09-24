@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\VIKRAM\AppData\Local\Temp\testng-eclipse--575553209\testng-customsuite.xml</span>
+                    <span>C:\Users\VIKRAM\AppData\Local\Temp\testng-eclipse--2093108427\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Sprint1.GoldBharathFullWorkFlow" class="method navigator-link" hash-for-method="RegisteringToGoldbharathTest([9999999999, 9999999998, 9999999988, 9999999888, 9999998888, 9999988888, 9999888888, 9998888888, 998...)">RegisteringToGoldbharathTest([9999999999, 9999999998, 9999999988, 9999999888, 9999998888, 9999988888, 9999888888, 9998888888, 998...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Sprint1.GoldBharathFullWorkFlow" class="method navigator-link" hash-for-method="distributorBookingGoldTest">distributorBookingGoldTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Sprint1.GoldBharathFullWorkFlow" class="method navigator-link" hash-for-method="distributorBuyingGoldTest">distributorBuyingGoldTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -144,6 +154,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="distributorBookingGoldTest">
+                  </a> <!-- distributorBookingGoldTest -->
+                  <span class="method-name">distributorBookingGoldTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="distributorBuyingGoldTest">
+                  </a> <!-- distributorBuyingGoldTest -->
+                  <span class="method-name">distributorBuyingGoldTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="loginToAdminApproveKycAndGivingGoldAndSilverLimit">
                   </a> <!-- loginToAdminApproveKycAndGivingGoldAndSilverLimit -->
                   <span class="method-name">loginToAdminApproveKycAndGivingGoldAndSilverLimit</span>
@@ -161,7 +185,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\VIKRAM\AppData\Local\Temp\testng-eclipse--575553209\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\VIKRAM\AppData\Local\Temp\testng-eclipse--2093108427\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -210,24 +234,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginToAdminApproveKycAndGivingGoldAndSilverLimit')
 data.setCell(0, 2, 'Sprint1.GoldBharathFullWorkFlow')
-data.setCell(0, 3, 131267);
+data.setCell(0, 3, 128459);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'RegisteringToGoldbharathTest')
+data.setCell(1, 1, 'distributorBuyingGoldTest')
 data.setCell(1, 2, 'Sprint1.GoldBharathFullWorkFlow')
-data.setCell(1, 3, 90882);
+data.setCell(1, 3, 76052);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginUpdatingKYC')
+data.setCell(2, 1, 'RegisteringToGoldbharathTest')
 data.setCell(2, 2, 'Sprint1.GoldBharathFullWorkFlow')
-data.setCell(2, 3, 58590);
+data.setCell(2, 3, 67221);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'loginUpdatingKYC')
+data.setCell(3, 2, 'Sprint1.GoldBharathFullWorkFlow')
+data.setCell(3, 3, 49203);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'distributorBookingGoldTest')
+data.setCell(4, 2, 'Sprint1.GoldBharathFullWorkFlow')
+data.setCell(4, 3, 27659);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -260,11 +292,19 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginUpdatingKYC</span>
-                <span class="method-start">90887 ms</span>
+                <span class="method-start">67227 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginToAdminApproveKycAndGivingGoldAndSilverLimit</span>
-                <span class="method-start">149478 ms</span>
+                <span class="method-start">116430 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">distributorBookingGoldTest</span>
+                <span class="method-start">244892 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">distributorBuyingGoldTest</span>
+                <span class="method-start">272553 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
