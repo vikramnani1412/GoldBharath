@@ -51,8 +51,6 @@ public class ReviewYourGoldOrderPage {
 
 	public void takeAllDetailsAndClickProceedBtn(WebDriver driver) throws Exception
 	{
-		WebDriverUtility wUtil = new WebDriverUtility();
-		
 		Thread.sleep(2000);
 		String Details = AllDetailsInThisPageEle.getText();
 		Thread.sleep(1000);
